@@ -21,9 +21,9 @@ class makeExplanation():
 		self.f_t_map=np.zeros(self.FEATURE_NUM,dtype=object)
 		self.get_item_tag_map()
 		self.get_feature_tag_map()
-		print("Now start to read i_r_rel...")
+		print("Now start to read i_f_rel...")
 		self.get_i_f_rel()
-		print("Now i_r_rel is read.")
+		print("Now i_f_rel is read.")
 		print("Now training is start.")
 		header=next(self.u_i_reader)
 		for i in range(1):
@@ -121,14 +121,18 @@ class makeExplanation():
 
 	def get_feature(self,item_id,user_id):
 		sorted_features=list(reversed(np.argsort(self.i_f_rel[item_id])))
-		sorted_preferences=list(reversed(np.argsort(self.u_f_map[user_id])))
+		# sorted_preferences=list(reversed(np.argsort(self.u_f_map[user_id])))
+		sorted_preferences=list(np.argsort(self.u_f_map[user_id]))
 		for f in sorted_features:
-			for i in range(10):
-				if sorted_preferences[i]==f:
+			for i in range(300):
+				if sorted_preferences[i]!=f:
 					continue
 				else:
-					print(self.f_t_map[f])
-					return self.f_t_map[f]
+					return self.f_t_map[f],f
+	def change_feature(self,user_id,feature_id):
+		if feature_id==0: 
+			return
+		self.u_f_map[user_id][feature_id]+=10
 
 	def make_explanation(self,item_name,user_id):
 		item_id=-1
@@ -137,7 +141,7 @@ class makeExplanation():
 				item_id=i
 				break
 		if item_id==-1:
-			return "Sorry, the name of the movie is not correctly. Please try it again."
-		unrel_feat=self.get_feature(item_id,user_id)
+			return "Sorry, the name of the movie is not correctly. Please try it again.",0
+		unrel_feat,feature_id=self.get_feature(item_id,user_id)
 		out_str="The movie you chosed including the feature "+unrel_feat+" that is not in your preference, do you still want to try it?"
-		return out_str
+		return out_str,feature_id
