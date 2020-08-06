@@ -1,0 +1,42 @@
+[
+        {
+            "text": "Please tell me the probability you will watch the movie ",
+            "fallback": "If you could read this message, you'd be choosing something fun to do right now.",
+            "color": "#3AA3E3",
+            "attachment_type": "default",
+            "callback_id": "result_scorer",
+            "actions": [
+                {
+                    "name": "games_list",
+                    "text": "Pick a game...",
+                    "type": "select",
+                    "options": [
+                        {
+                            "text": "I will not watch the movie definitely",
+                            "value": "1 point"
+                        },
+                        {
+                            "text": "I will not watch the movie probably",
+                            "value": "2 point"
+                        },
+                        {
+                            "text": "I don't know if I will watch the movie",
+                            "value": "3 point"
+                        },
+                        {
+                            "text": "I will watch the movie probably",
+                            "value": "4 point"
+                        },
+                        {
+                            "text": "I will watch the movie definitely",
+                            "value": "5 point"
+                        }
+                        
+                        
+                        
+                       
+                    ]
+                }
+            ]
+        }
+    ]

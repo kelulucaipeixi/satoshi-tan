@@ -1,0 +1,22 @@
+[
+        {
+            "text": "Choose a game to play",
+            "fallback": "If you could read this message, you'd be choosing something fun to do right now.",
+            "color": "#3AA3E3",
+            "attachment_type": "default",
+            "callback_id": "revise_name",
+            "actions": [
+                {
+                    "name": "games_list",
+                    "text": "Pick a game...",
+                    "type": "select",
+                    "options": [
+                        {
+                            "text": "Harry",
+                            "value": "Harry Potter and the Chamber of Secrets (2002)"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]

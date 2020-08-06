@@ -1,0 +1,67 @@
+[
+        {
+            "text": "Please give the score to the feature ",
+            "fallback": "You are unable to choose a feature",
+            "callback_id": "make_score",
+            "color": "#3AA3E3",
+            "attachment_type": "default",
+            "actions": [
+                {
+                    "name": "feature",
+                    "text": "1 point",
+                    "type": "button",
+                    "value": 1,
+                    "confirm": {
+                        "title": "Are you sure?",
+                        "ok_text": "Yes",
+                        "dismiss_text": "No"
+                    }
+                },
+                {
+                    "name": "feature",
+                    "text": "2 point",
+                    "type": "button",
+                    "value": 2,
+                    "confirm": {
+                        "title": "Are you sure?",
+                        "ok_text": "Yes",
+                        "dismiss_text": "No"
+                    }
+                },
+                {
+                    "name": "feature",
+                    "text": "3 point",
+                    "type": "button",
+                    "value": 3,
+                    "confirm": {
+                        "title": "Are you sure?",
+                        "ok_text": "Yes",
+                        "dismiss_text": "No"
+                    }
+                },
+                {
+                    "name": "feature",
+                    "text": "4 point",
+                    "type": "button",
+                    "value": 4,
+                    "confirm": {
+                        "title": "Are you sure?",
+                        "ok_text": "Yes",
+                        "dismiss_text": "No"
+                    }
+                },
+                {
+                    "name": "feature",
+                    "text": "5 point",
+                    "type": "button",
+                    "value": 5,
+                    "confirm": {
+                        "title": "Are you sure?",
+                        "ok_text": "Yes",
+                        "dismiss_text": "No"
+                    }
+                }
+
+            ]
+        }
+    ]
